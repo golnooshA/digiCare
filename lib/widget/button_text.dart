@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 
 class ButtonText extends StatelessWidget {
-  final Function onTap;
+  final VoidCallback onTap;
   final String text;
   final Color textColor;
   final Color borderColor;
@@ -27,6 +27,7 @@ class ButtonText extends StatelessWidget {
         EdgeInsetsGeometry? margin
       })
       :
+        assert(onTap != null),
         this.padding= padding ?? EdgeInsets.all(20),
         this.margin= margin ?? EdgeInsets.zero;
 
@@ -49,7 +50,7 @@ class ButtonText extends StatelessWidget {
                 color: textColor,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600)),
-        onPressed: (){},
+        onPressed: onTap,
       ),
     );
   }
