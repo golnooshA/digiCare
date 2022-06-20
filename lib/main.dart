@@ -1,11 +1,10 @@
-
-
+import 'package:digi/page/restPassword.dart';
 import 'package:flutter/material.dart';
 
 import 'page/start.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Start(),
+  runApp(MaterialApp(
+    home:ResetPassword(),
   ));
 }

@@ -37,6 +37,7 @@ dependencies:
   custom_radio_grouped_button: ^2.1.2+1
   image_picker: ^0.8.5+3
   file_picker: ^4.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -61,6 +62,20 @@ flutter:
 
   assets:
     - assets/logo.png
+    - assets/facebook.png
+    - assets/twitter.png
+    - assets/gmail.png
+    - assets/cover.png
+    - assets/information.png
+    - assets/siren.png
+    - assets/img1.jpg
+    - assets/img2.jpg
+    - assets/img3.jpg
+    - assets/img4.jpg
+    - assets/img5.jpg
+    - assets/img6.jpg
+    - assets/img7.jpg
+    - assets/img8.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

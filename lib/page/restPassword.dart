@@ -4,6 +4,7 @@ import '../core/design_config.dart';
 import '../widget/form.dart';
 
 class ResetPassword extends StatelessWidget {
+  ResetPassword({super.key});
 
   final TextEditingController emailController = TextEditingController();
   final FocusNode emailFocusNode = FocusNode();
@@ -16,18 +17,17 @@ class ResetPassword extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
-        body:SingleChildScrollView(
+        body: SingleChildScrollView(
           reverse: true,
           controller: ScrollController(),
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 width: double.infinity,
                 height: 150,
                 alignment: Alignment.center,
-                margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                 decoration: const BoxDecoration(
                   // color: Colors.amber,
                   image: DecorationImage(
@@ -36,17 +36,17 @@ class ResetPassword extends StatelessWidget {
                   ),
                 ),
               ),
-
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                child: const Text("Enter your email address and we will send you a password reset link.",
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                child: const Text(
+                    "Enter your email address and we will send you a password reset link.",
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: DesignConfig.textColor,
                         fontSize: DesignConfig.textFontSize,
                         fontWeight: FontWeight.w600)),
               ),
-
               TextFieldSimple(
                 title: 'Email',
                 controller: emailController,
@@ -58,15 +58,20 @@ class ResetPassword extends StatelessWidget {
                   emailFocusNode.unfocus();
                 },
               ),
-
               ButtonText(
-                onTap: (){},
+                onTap: () {
+                  print('snack bar');
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Send recover password for your email"),
+                  ));
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Send password reset email',
                 buttonColor: DesignConfig.buttonColorBlue,
                 height: DesignConfig.buttonHeight,
-                margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 fontSize: DesignConfig.textFontSize,
               )
             ],

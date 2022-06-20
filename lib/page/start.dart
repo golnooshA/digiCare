@@ -40,11 +40,11 @@ class Start extends StatelessWidget {
               ButtonText(
                 onTap: () {
                   print("Sign in");
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => SignIn()),);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignIn()),);
                 },
-                textColor: DesignConfig.buttonTextColor,
+                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Sign In',
                 buttonColor: DesignConfig.buttonColorDarkBlue,
