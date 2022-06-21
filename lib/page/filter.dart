@@ -1,3 +1,4 @@
+import 'package:digi/page/desntist.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:digi/widget/form.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class _FilterState extends State<Filter> {
         body: Column(
           children: [
             Expanded(
-              flex: 4,
+              flex: 5,
               child: Column(
                 children: [
                   TextFieldSimple(
@@ -92,7 +93,10 @@ class _FilterState extends State<Filter> {
             Expanded(
               flex: 1,
               child: ButtonText(
-                onTap: () {},
+                onTap: () { Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Filter',

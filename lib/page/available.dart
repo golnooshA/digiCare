@@ -3,7 +3,10 @@
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
+import 'doctorInfo.dart';
+import 'filter.dart';
 import 'menu.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 class Available extends StatefulWidget {
   const Available({super.key});
@@ -34,7 +37,9 @@ class _AvailableState extends State<Available> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {Navigator.pop(context);},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           actions: <Widget>[
             Padding(
@@ -46,7 +51,10 @@ class _AvailableState extends State<Available> {
                           color: DesignConfig.darkBlue,
                           fontSize: DesignConfig.textFontSize,
                           fontWeight: FontWeight.w600)),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Filter()));
+                  },
                 )),
           ],
         ),
@@ -55,7 +63,12 @@ class _AvailableState extends State<Available> {
           scrollDirection: Axis.vertical,
           children: [
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DoctorInformation()));
+              },
               child: Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(
@@ -90,12 +103,16 @@ class _AvailableState extends State<Available> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin:
-                              const EdgeInsets.only(left: 70),
-                              child: const Icon(Icons.phone,
-                                  size: 24, color: DesignConfig.callColor),
+                            GestureDetector(
+                              onTap: () {
+                                UrlLauncher.launch("tel://1234567890");
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 70),
+                                child: const Icon(Icons.phone,
+                                    size: 24, color: DesignConfig.callColor),
+                              ),
                             ),
                           ],
                         ),
@@ -113,15 +130,18 @@ class _AvailableState extends State<Available> {
                           children: [
                             Container(
                               alignment: Alignment.centerLeft,
-                              child: const Icon(Icons.star,
-                                  size: 20, color: DesignConfig.rateColor),
+                              child: const Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.transparent,
+                              ),
                             ),
                             Container(
                               alignment: Alignment.centerLeft,
                               child: const Text('4.98(987)',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: DesignConfig.rateColor,
+                                      color: Colors.transparent,
                                       fontSize: DesignConfig.textFontSize,
                                       fontWeight: FontWeight.w400)),
                             ),
@@ -133,9 +153,13 @@ class _AvailableState extends State<Available> {
                 ),
               ),
             ),
-
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DoctorInformation()));
+              },
               child: Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(
@@ -170,12 +194,16 @@ class _AvailableState extends State<Available> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin:
-                              const EdgeInsets.only(left: 80),
-                              child: const Icon(Icons.phone,
-                                  size: 24, color: DesignConfig.callColor),
+                            GestureDetector(
+                              onTap: () {
+                                UrlLauncher.launch("tel://1234567890");
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 80),
+                                child: const Icon(Icons.phone,
+                                    size: 24, color: DesignConfig.callColor),
+                              ),
                             ),
                           ],
                         ),
@@ -193,15 +221,18 @@ class _AvailableState extends State<Available> {
                           children: [
                             Container(
                               alignment: Alignment.centerLeft,
-                              child: const Icon(Icons.star,
-                                  size: 20, color: DesignConfig.rateColor),
+                              child: const Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.transparent,
+                              ),
                             ),
                             Container(
                               alignment: Alignment.centerLeft,
                               child: const Text('4.98(987)',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: DesignConfig.rateColor,
+                                      color: Colors.transparent,
                                       fontSize: DesignConfig.textFontSize,
                                       fontWeight: FontWeight.w400)),
                             ),
@@ -213,9 +244,13 @@ class _AvailableState extends State<Available> {
                 ),
               ),
             ),
-
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DoctorInformation()));
+              },
               child: Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(
@@ -250,12 +285,16 @@ class _AvailableState extends State<Available> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin:
-                              const EdgeInsets.only(left: 70),
-                              child: const Icon(Icons.phone,
-                                  size: 24, color: DesignConfig.callColor),
+                            GestureDetector(
+                              onTap: () {
+                                UrlLauncher.launch("tel://1234567890");
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 70),
+                                child: const Icon(Icons.phone,
+                                    size: 24, color: DesignConfig.callColor),
+                              ),
                             ),
                           ],
                         ),
@@ -273,15 +312,18 @@ class _AvailableState extends State<Available> {
                           children: [
                             Container(
                               alignment: Alignment.centerLeft,
-                              child: const Icon(Icons.star,
-                                  size: 20, color: DesignConfig.rateColor),
+                              child: const Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.transparent,
+                              ),
                             ),
                             Container(
                               alignment: Alignment.centerLeft,
                               child: const Text('4.98(987)',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: DesignConfig.rateColor,
+                                      color: Colors.transparent,
                                       fontSize: DesignConfig.textFontSize,
                                       fontWeight: FontWeight.w400)),
                             ),
@@ -293,9 +335,13 @@ class _AvailableState extends State<Available> {
                 ),
               ),
             ),
-
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DoctorInformation()));
+              },
               child: Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(
@@ -330,12 +376,16 @@ class _AvailableState extends State<Available> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin:
-                              const EdgeInsets.only(left: 60),
-                              child: const Icon(Icons.phone,
-                                  size: 24, color: DesignConfig.callColor),
+                            GestureDetector(
+                              onTap: () {
+                                UrlLauncher.launch("tel://1234567890");
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 60),
+                                child: const Icon(Icons.phone,
+                                    size: 24, color: DesignConfig.callColor),
+                              ),
                             ),
                           ],
                         ),
@@ -353,15 +403,18 @@ class _AvailableState extends State<Available> {
                           children: [
                             Container(
                               alignment: Alignment.centerLeft,
-                              child: const Icon(Icons.star,
-                                  size: 20, color: DesignConfig.rateColor),
+                              child: const Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.transparent,
+                              ),
                             ),
                             Container(
                               alignment: Alignment.centerLeft,
                               child: const Text('4.98(987)',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: DesignConfig.rateColor,
+                                      color: Colors.transparent,
                                       fontSize: DesignConfig.textFontSize,
                                       fontWeight: FontWeight.w400)),
                             ),
@@ -373,9 +426,13 @@ class _AvailableState extends State<Available> {
                 ),
               ),
             ),
-
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DoctorInformation()));
+              },
               child: Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(
@@ -410,12 +467,16 @@ class _AvailableState extends State<Available> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin:
-                              const EdgeInsets.only(left: 80),
-                              child: const Icon(Icons.phone,
-                                  size: 24, color: DesignConfig.callColor),
+                            GestureDetector(
+                              onTap: () {
+                                UrlLauncher.launch("tel://1234567890");
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 80),
+                                child: const Icon(Icons.phone,
+                                    size: 24, color: DesignConfig.callColor),
+                              ),
                             ),
                           ],
                         ),
@@ -433,15 +494,18 @@ class _AvailableState extends State<Available> {
                           children: [
                             Container(
                               alignment: Alignment.centerLeft,
-                              child: const Icon(Icons.star,
-                                  size: 20, color: DesignConfig.rateColor),
+                              child: const Icon(
+                                Icons.star,
+                                size: 20,
+                                color: Colors.transparent,
+                              ),
                             ),
                             Container(
                               alignment: Alignment.centerLeft,
                               child: const Text('4.98(987)',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: DesignConfig.rateColor,
+                                      color: Colors.transparent,
                                       fontSize: DesignConfig.textFontSize,
                                       fontWeight: FontWeight.w400)),
                             ),

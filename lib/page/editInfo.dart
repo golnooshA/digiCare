@@ -1,10 +1,14 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/userInfo.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import '../core/design_config.dart';
 import '../widget/form.dart';
 import 'menu.dart';
+import 'dart:io';
+
 
 class EditInformation extends StatefulWidget {
   const EditInformation({super.key});
@@ -14,6 +18,9 @@ class EditInformation extends StatefulWidget {
 }
 
 class _EditInformationState extends State<EditInformation> {
+
+  late File imageFile;
+
   @override
   Widget build(BuildContext context) {
 
@@ -67,7 +74,7 @@ class _EditInformationState extends State<EditInformation> {
         body: Column(
           children: [
             Expanded(
-              flex: 4,
+              flex: 5,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
@@ -92,7 +99,9 @@ class _EditInformationState extends State<EditInformation> {
                                   size: DesignConfig.appBarTextFontSize,
                                 ),
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                _getFromGallery();
+                              },
                             ),
                           ],
                         ),
@@ -293,7 +302,12 @@ class _EditInformationState extends State<EditInformation> {
             Expanded(
               flex: 1,
               child: ButtonText(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => UserInformation()));
+
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Save Changes',
@@ -308,4 +322,19 @@ class _EditInformationState extends State<EditInformation> {
       ),
     );
   }
+
+  _getFromGallery() async {
+    PickedFile? pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      setState(() {
+        imageFile = File(pickedFile.path);
+      });
+    }
+  }
 }
+
+

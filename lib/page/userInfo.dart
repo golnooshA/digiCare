@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/editInfo.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
@@ -30,11 +31,11 @@ class _UserInformationState extends State<UserInformation> {
           elevation: 0,
           leading: GestureDetector(
             child: const Icon(
-              Icons.arrow_back_ios_sharp,
+              Icons.menu,
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {Navigator.pop(context);},
+            onTap: () {},
           ),
           actions: <Widget>[
             Padding(
@@ -46,7 +47,12 @@ class _UserInformationState extends State<UserInformation> {
                           color: DesignConfig.darkBlue,
                           fontSize: DesignConfig.textFontSize,
                           fontWeight: FontWeight.w600)),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EditInformation()));
+
+                  },
                 )),
           ],
         ),
@@ -307,7 +313,7 @@ class _UserInformationState extends State<UserInformation> {
                   flex: 1,
                   child: Container(
                     margin: const EdgeInsets.only(
-                        left: 30, right: 8, top: 12, bottom: 12),
+                        left: 30, right: 8, top: 12, bottom: 20),
                     alignment: Alignment.centerLeft,
                     child: const Text('Special disease',
                         textAlign: TextAlign.left,
@@ -321,7 +327,7 @@ class _UserInformationState extends State<UserInformation> {
                   flex: 1,
                   child: Container(
                     margin: const EdgeInsets.only(
-                        left: 8, right: 30, bottom: 8, top: 12),
+                        left: 8, right: 30, bottom: 20, top: 12),
                     alignment: Alignment.centerLeft,
                     child: const Text('Migraine',
                         textAlign: TextAlign.left,
@@ -346,7 +352,7 @@ class _UserInformationState extends State<UserInformation> {
                   flex: 1,
                   child: Container(
                     margin: const EdgeInsets.only(
-                        left: 30, right: 8, top: 12, bottom: 12),
+                        left: 30, right: 8, top: 20, bottom: 12),
                     alignment: Alignment.centerLeft,
                     child: const Text('Phone Number',
                         textAlign: TextAlign.left,
@@ -360,7 +366,7 @@ class _UserInformationState extends State<UserInformation> {
                   flex: 1,
                   child: Container(
                     margin: const EdgeInsets.only(
-                        left: 8, right: 30, bottom: 8, top: 12),
+                        left: 8, right: 30, bottom: 8, top: 20),
                     alignment: Alignment.centerLeft,
                     child: const Text('0039123456789',
                         textAlign: TextAlign.left,
