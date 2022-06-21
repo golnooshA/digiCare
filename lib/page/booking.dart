@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/getAppointment.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,10 @@ class _BookingState extends State<Booking> {
   SeeDoctor? _seeDoctor = SeeDoctor.yes;
   VisitDoctor? _visitDoctor = VisitDoctor.inperson;
 
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,23 +47,23 @@ class _BookingState extends State<Booking> {
             ),
             onTap: () {Navigator.pop(context);},
           ),
-          actions: <Widget>[
-            Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.call,
-                    color: DesignConfig.callColor,
-                    size: DesignConfig.appBarIconSize,
-                  ),
-                )),
-          ],
+          // actions: <Widget>[
+          //   Padding(
+          //       padding: const EdgeInsets.only(right: 20.0),
+          //       child: GestureDetector(
+          //         onTap: () {},
+          //         child: const Icon(
+          //           Icons.call,
+          //           color: DesignConfig.callColor,
+          //           size: DesignConfig.appBarIconSize,
+          //         ),
+          //       )),
+          // ],
         ),
         body: Column(
           children: [
             Expanded(
-              flex: 4,
+              flex: 5,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
@@ -300,6 +305,7 @@ class _BookingState extends State<Booking> {
                       ),
                       Column(
                         children: [
+
                           Container(
                             color: Colors.lightBlue,
                             margin:
@@ -324,7 +330,10 @@ class _BookingState extends State<Booking> {
             Expanded(
               flex: 1,
               child: ButtonText(
-                onTap: () {},
+                onTap: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GetAppointment()));
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Continue Booking',

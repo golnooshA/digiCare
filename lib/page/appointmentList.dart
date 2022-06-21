@@ -1,5 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/doctorInfo.dart';
+import 'package:digi/page/oneAppointment.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
@@ -78,26 +80,99 @@ class _AppointmentListState extends State<AppointmentList> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin: const EdgeInsets.only(left: 50),
-                              child: const Icon(Icons.remove_red_eye,
-                                  size: 24,
-                                  color: DesignConfig.buttonColorDarkBlue),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const OneAppointment()));
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 50),
+                                child: const Icon(Icons.remove_red_eye,
+                                    size: 24,
+                                    color: DesignConfig.buttonColorDarkBlue),
+                              ),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin: const EdgeInsets.only(left: 4),
-                              child: const Icon(Icons.edit,
-                                  size: 24,
-                                  color: DesignConfig.buttonColorDarkBlue),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const DoctorInformation()));
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 4),
+                                child: const Icon(Icons.edit,
+                                    size: 24,
+                                    color: DesignConfig.buttonColorDarkBlue),
+                              ),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin: const EdgeInsets.only(left: 4),
-                              child: const Icon(Icons.delete,
-                                  size: 24,
-                                  color: DesignConfig.buttonColorDarkBlue),
+                            GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      title: const Text(
+                                        "Cancel Appointment",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: DesignConfig.textColor,
+                                            fontSize:
+                                                DesignConfig.appBarTextFontSize,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      content: const Text(
+                                        "Do you want to delete this appointment?",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: DesignConfig.textColor,
+                                            fontSize: DesignConfig.textFontSize,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                      actions: [
+                                        Expanded(
+                                          flex:1,
+                                          child: ButtonText(
+                                              onTap: (){
+                                                Navigator.of(context).pop();
+                                              },
+                                              textColor: Colors.green,
+                                              minWidth: 50,
+                                              text: "Yes",
+                                              buttonColor: Colors.transparent,
+                                              height: 30),
+                                        ),
+                                        Expanded(
+                                          flex:1,
+                                          child: ButtonText(
+                                              onTap: (){
+                                                Navigator.of(context).pop();
+                                              },
+                                              textColor: Colors.red,
+                                              minWidth: 50,
+                                              text: "No",
+                                              buttonColor: Colors.transparent,
+                                              height: 30),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 4),
+                                child: const Icon(Icons.delete,
+                                    size: 24,
+                                    color: DesignConfig.buttonColorDarkBlue),
+                              ),
                             ),
                           ],
                         ),
@@ -126,7 +201,6 @@ class _AppointmentListState extends State<AppointmentList> {
                 ),
               ),
             ),
-
             GestureDetector(
               onTap: () {},
               child: Container(
@@ -164,26 +238,99 @@ class _AppointmentListState extends State<AppointmentList> {
                                       fontSize: DesignConfig.appBarTextFontSize,
                                       fontWeight: FontWeight.w600)),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin: const EdgeInsets.only(left: 55),
-                              child: const Icon(Icons.remove_red_eye,
-                                  size: 24,
-                                  color: DesignConfig.buttonColorDarkBlue),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                        const OneAppointment()));
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 60),
+                                child: const Icon(Icons.remove_red_eye,
+                                    size: 24,
+                                    color: DesignConfig.buttonColorDarkBlue),
+                              ),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin: const EdgeInsets.only(left: 4),
-                              child: const Icon(Icons.edit,
-                                  size: 24,
-                                  color: DesignConfig.buttonColorDarkBlue),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                        const DoctorInformation()));
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 4),
+                                child: const Icon(Icons.edit,
+                                    size: 24,
+                                    color: DesignConfig.buttonColorDarkBlue),
+                              ),
                             ),
-                            Container(
-                              alignment: Alignment.topCenter,
-                              margin: const EdgeInsets.only(left: 4),
-                              child: const Icon(Icons.delete,
-                                  size: 24,
-                                  color: DesignConfig.buttonColorDarkBlue),
+                            GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      title: const Text(
+                                        "Cancel Appointment",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: DesignConfig.textColor,
+                                            fontSize:
+                                            DesignConfig.appBarTextFontSize,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      content: const Text(
+                                        "Do you want to delete this appointment?",
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: DesignConfig.textColor,
+                                            fontSize: DesignConfig.textFontSize,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                      actions: [
+                                        Expanded(
+                                          flex:1,
+                                          child: ButtonText(
+                                              onTap: (){
+                                                Navigator.of(context).pop();
+                                              },
+                                              textColor: Colors.green,
+                                              minWidth: 50,
+                                              text: "Yes",
+                                              buttonColor: Colors.transparent,
+                                              height: 30),
+                                        ),
+                                        Expanded(
+                                          flex:1,
+                                          child: ButtonText(
+                                              onTap: (){
+                                                Navigator.of(context).pop();
+                                              },
+                                              textColor: Colors.red,
+                                              minWidth: 50,
+                                              text: "No",
+                                              buttonColor: Colors.transparent,
+                                              height: 30),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              child: Container(
+                                alignment: Alignment.topCenter,
+                                margin: const EdgeInsets.only(left: 4),
+                                child: const Icon(Icons.delete,
+                                    size: 24,
+                                    color: DesignConfig.buttonColorDarkBlue),
+                              ),
                             ),
                           ],
                         ),

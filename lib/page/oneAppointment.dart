@@ -12,14 +12,6 @@ class OneAppointment extends StatefulWidget {
 
 class _OneAppointmentState extends State<OneAppointment> {
 
-  // late GoogleMapController myController;
-  //
-  // final LatLng _center = const LatLng(45.521563, -122.677433);
-  //
-  // void _onMapCreated(GoogleMapController controller) {
-  //   myController = controller;
-  // }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,6 +33,13 @@ class _OneAppointmentState extends State<OneAppointment> {
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
           children: [
+            Container(
+              width: double.infinity,
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 8),
+              child:  Image.asset('assets/img8.jpg',
+                  fit: BoxFit.cover, width: 120, height: 120),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -80,7 +79,7 @@ class _OneAppointmentState extends State<OneAppointment> {
               child: const Text('Pediatrician',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: DesignConfig.textColor,
+                      color: DesignConfig.textFieldColor,
                       fontSize: DesignConfig.textFontSize,
                       fontWeight: FontWeight.w400)),
             ),
@@ -91,7 +90,7 @@ class _OneAppointmentState extends State<OneAppointment> {
               child: const Text('May 9, 2022 - 15:45 ',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: DesignConfig.textColor,
+                      color: DesignConfig.rateColor,
                       fontSize: DesignConfig.textFontSize,
                       fontWeight: FontWeight.w600)),
             ),
@@ -100,12 +99,12 @@ class _OneAppointmentState extends State<OneAppointment> {
               width: double.infinity,
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.only(top: 12, left: 30, right: 30, bottom: 12),
-              child: const Text('Address',
+              child: const Text('Ephraim Ovitsh, MD, PC 200 West 20th St New York, NY 10011',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                       color: DesignConfig.textColor,
                       fontSize: DesignConfig.textFontSize,
-                      fontWeight: FontWeight.w600)),
+                      fontWeight: FontWeight.w500)),
             ),
 
             // Container(

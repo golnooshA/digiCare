@@ -44,13 +44,13 @@ class ButtonText extends StatelessWidget {
         highlightColor: DesignConfig.highlightColor,
         padding: padding,
         shape: RoundedRectangleBorder(side: BorderSide(color: borderColor)),
-        child: Text(text,
+        onPressed: onTap,
+        child:  Text(text,
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: textColor,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600)),
-        onPressed: onTap,
       ),
     );
   }

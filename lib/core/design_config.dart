@@ -28,10 +28,13 @@ class DesignConfig {
   static const double tinyFontSize = 10;
   static const double titleFontSize = 24;
   static const double mediumFontSize = 14;
+  static const double tabBarFontSize = 13;
+  static const double tabBarViewFontSize = 15;
   static const double bigFontSize = 40;
   static const double appBarTextFontSize = 20;
   static const double appBarIconSize = 32;
   static const double buttonHeight = 50;
+  static const double commentButtonHeight = 30;
   static const double coverButtonHeight = 30;
   static const double coverButtonTextSize = 14;
 

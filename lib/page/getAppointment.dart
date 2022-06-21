@@ -1,3 +1,4 @@
+import 'package:digi/page/appointmentList.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:digi/widget/form.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,7 @@ class _GetAppointmentState extends State<GetAppointment> {
         body: Column(
           children: [
             Expanded(
-              flex: 4,
+              flex: 5,
               child: Column(
                 children: [
                  Row(
@@ -144,7 +145,12 @@ class _GetAppointmentState extends State<GetAppointment> {
             Expanded(
               flex: 1,
               child: ButtonText(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AppointmentList()));
+
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Get Appointment',
