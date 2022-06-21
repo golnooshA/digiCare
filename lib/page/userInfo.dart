@@ -34,7 +34,7 @@ class _UserInformationState extends State<UserInformation> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
           actions: <Widget>[
             Padding(

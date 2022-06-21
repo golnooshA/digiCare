@@ -41,7 +41,7 @@ class _SearchState extends State<Search> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
 
         ),

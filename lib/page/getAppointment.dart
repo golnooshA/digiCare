@@ -47,7 +47,7 @@ class _GetAppointmentState extends State<GetAppointment> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
 
         ),

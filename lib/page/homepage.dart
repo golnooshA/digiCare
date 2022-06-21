@@ -1,9 +1,16 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/serach.dart';
+import 'package:digi/page/userInfo.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
+import 'available.dart';
+import 'category.dart';
+import 'desntist.dart';
 import 'menu.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,7 +47,10 @@ class _HomePageState extends State<HomePage> {
             Padding(
                 padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Search()));
+                  },
                   child: const Icon(
                     Icons.search,
                     color: DesignConfig.textColor,
@@ -100,7 +110,12 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w800)),
                       ),
                       ButtonText(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Available()));
+
+                        },
                         textColor: DesignConfig.buttonTextColor,
                         minWidth: DesignConfig.buttonHeight,
                         text: 'See more',
@@ -123,7 +138,11 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   flex: 1,
                   child: GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => UserInformation()));
+                    },
                     child: Container(
                         height: 120,
                         alignment: Alignment.center,
@@ -170,7 +189,9 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 GestureDetector(
-                  onTap: (){},
+                  onTap: (){
+                    UrlLauncher.launch("tel://1234567890");
+                  },
                   child: Container(
                       height: 120,
                       alignment: Alignment.center,
@@ -233,16 +254,21 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 GestureDetector(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Categories()));
+
+                  },
                   child: Container(
                     margin:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                     child: const Text('more',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: DesignConfig.textColor,
+                            color: DesignConfig.buttonColorBlue,
                             fontSize: DesignConfig.textFontSize,
-                            fontWeight: FontWeight.w400)),
+                            fontWeight: FontWeight.w600)),
                   ),
                 ),
               ],
@@ -254,7 +280,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -271,7 +300,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -288,7 +320,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -305,7 +340,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -322,7 +360,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -339,7 +380,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -356,7 +400,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,
@@ -373,7 +420,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap:(){},
+                    onTap:(){Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dentist()));
+                    },
                     child: Container(
                       width: 120,
                       height: 120,

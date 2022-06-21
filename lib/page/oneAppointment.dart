@@ -34,7 +34,7 @@ class _OneAppointmentState extends State<OneAppointment> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
         ),
         body: ListView(

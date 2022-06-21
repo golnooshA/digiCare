@@ -41,7 +41,7 @@ class _FilterState extends State<Filter> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
 
         ),

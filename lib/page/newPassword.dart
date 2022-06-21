@@ -2,6 +2,7 @@ import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import '../widget/form.dart';
+import 'signIn.dart';
 
 class NewPassword extends StatelessWidget {
 
@@ -66,7 +67,16 @@ class NewPassword extends StatelessWidget {
               ),
 
               ButtonText(
-                onTap: (){},
+                onTap: () {
+                  print('snack bar');
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Send recover password for your email"),
+                  ));
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignIn()),);
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Change Password',

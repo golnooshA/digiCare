@@ -1,7 +1,9 @@
+import 'package:digi/page/newPassword.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import '../widget/form.dart';
+
 
 class ResetPassword extends StatelessWidget {
   ResetPassword({super.key});
@@ -64,6 +66,10 @@ class ResetPassword extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("Send recover password for your email"),
                   ));
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NewPassword()));
                 },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,

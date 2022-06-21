@@ -1,7 +1,16 @@
+import 'package:digi/page/appointmentList.dart';
+import 'package:digi/page/category.dart';
+import 'package:digi/page/chats.dart';
+import 'package:digi/page/homepage.dart';
+import 'package:digi/page/medicalDocumnet.dart';
+import 'package:digi/page/pillReminder.dart';
+import 'package:digi/page/start.dart';
+import 'package:digi/page/userInfo.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import '../widget/form.dart';
+import 'aboutUs.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -35,7 +44,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()));
+                        },
                       ),
 
                       ListTile(
@@ -50,7 +62,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => UserInformation()));
+                        },
                       ),
 
                       ListTile(
@@ -66,7 +81,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MedicalDocumnet()));
+                        },
                       ),
                       ListTile(
                         title: Container(
@@ -81,7 +99,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => PillReminder()));
+                        },
                       ),
 
                       ListTile(
@@ -97,7 +118,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Categories()));
+                        },
                       ),
 
                       ListTile(
@@ -113,7 +137,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => AppointmentList()));
+                        },
                       ),
 
                       ListTile(
@@ -128,7 +155,10 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Chats()));
+                        },
                       ),
 
                       ListTile(
@@ -143,7 +173,12 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => AboutUs()));
+
+                        },
                       ),
 
                       ListTile(
@@ -158,7 +193,12 @@ class Menu extends StatelessWidget {
                               )),
                         ),
                         // contentPadding: EdgeInsets.all(4),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Start()));
+
+                        },
                       ),
                     ],
                   )),
@@ -166,7 +206,7 @@ class Menu extends StatelessWidget {
                 flex: 1,
                 child: Container(
                   margin:
-                      const EdgeInsets.only(bottom: 30, left: 12),
+                  const EdgeInsets.only(bottom: 30, left: 12),
                   alignment: Alignment.center,
                   decoration: const BoxDecoration(
                     // color: Colors.amber,

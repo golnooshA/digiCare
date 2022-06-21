@@ -30,7 +30,7 @@ class DesignConfig {
   static const double mediumFontSize = 14;
   static const double bigFontSize = 40;
   static const double appBarTextFontSize = 20;
-  static const double appBarIconSize = 40;
+  static const double appBarIconSize = 32;
   static const double buttonHeight = 50;
   static const double coverButtonHeight = 30;
   static const double coverButtonTextSize = 14;

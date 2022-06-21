@@ -34,7 +34,7 @@ class _DentistState extends State<Dentist> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
           actions: <Widget>[
             Padding(

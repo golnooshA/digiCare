@@ -1,7 +1,10 @@
+import 'package:digi/page/signUp.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import '../widget/form.dart';
+import 'homepage.dart';
+import 'restPassword.dart';
 
 class SignIn extends StatelessWidget {
 
@@ -62,7 +65,12 @@ class SignIn extends StatelessWidget {
               },
             ),
             ButtonText(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),);
+
+              },
               textColor: DesignConfig.buttonTextColor,
               minWidth: double.infinity,
               text: 'Sign In',
@@ -72,7 +80,12 @@ class SignIn extends StatelessWidget {
               fontSize: DesignConfig.textFontSize,
             ),
             ButtonText(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ResetPassword()),);
+
+              },
               textColor: DesignConfig.buttonColorBlue,
               minWidth: double.infinity,
               text: 'Forgot my password',
@@ -82,7 +95,7 @@ class SignIn extends StatelessWidget {
               fontSize: DesignConfig.textFontSize,
             ),
             const Divider(
-              color: DesignConfig.textFieldColor,
+              color: DesignConfig.textColor,
               height: 2,
               endIndent: 30,
               indent: 30,
@@ -94,80 +107,70 @@ class SignIn extends StatelessWidget {
                   style: TextStyle(
                       color: DesignConfig.textColor,
                       fontSize: DesignConfig.textFontSize,
-                      fontWeight: FontWeight.w700)),
+                      fontWeight: FontWeight.w500)),
             ),
-            // Row(
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Container(
-            //       width: 50,
-            //       height: 50,
-            //       alignment: Alignment.center,
-            //       margin: const EdgeInsets.symmetric(horizontal: 8),
-            //       decoration: const BoxDecoration(
-            //         // color: Colors.amber,
-            //         image: DecorationImage(
-            //           image: AssetImage('assets/gmail.png'),
-            //           // fit: BoxFit.cover,
-            //         ),
-            //       ),
-            //       child: null /* add child content here */,
-            //     ),
-            //     Container(
-            //       width: 50,
-            //       height: 50,
-            //       alignment: Alignment.center,
-            //       margin: const EdgeInsets.symmetric(horizontal: 8),
-            //       decoration: const BoxDecoration(
-            //         borderRadius: BorderRadius.all(Radius.circular(4)),
-            //         image: DecorationImage(
-            //           image: AssetImage('assets/facebook.png'),
-            //           // fit: BoxFit.cover,
-            //         ),
-            //       ),
-            //       child: null /* add child content here */,
-            //     ),
-            //     Container(
-            //       width: 50,
-            //       height: 50,
-            //       alignment: Alignment.center,
-            //       margin: const EdgeInsets.symmetric(horizontal: 8),
-            //       decoration: const BoxDecoration(
-            //         borderRadius: BorderRadius.all(Radius.circular(4)),
-            //         image: DecorationImage(
-            //           image: AssetImage('assets/twitter.png'),
-            //           // fit: BoxFit.cover,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Container(
-            //       margin: const EdgeInsets.only(
-            //           left: 30, right: 30, top: 12, bottom: 12),
-            //       child: const Text('Dont have an account?',
-            //           textAlign: TextAlign.center,
-            //           style: TextStyle(
-            //               color: DesignConfig.buttonColorBlue,
-            //               fontSize: DesignConfig.textFontSize,
-            //               fontWeight: FontWeight.w600)),
-            //     ),
-            //     ButtonText(
-            //       onTap: () {},
-            //       textColor: DesignConfig.buttonColorBlue,
-            //       minWidth: double.infinity,
-            //       text: 'Sign Up',
-            //       buttonColor: Colors.transparent,
-            //       height: DesignConfig.buttonHeight,
-            //       margin: const EdgeInsets.symmetric(horizontal: 30),
-            //       fontSize: DesignConfig.textFontSize,
-            //     ),
-            //   ],
-            // )
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  decoration: const BoxDecoration(
+                    // color: Colors.amber,
+                    image: DecorationImage(
+                      image: AssetImage('assets/gmail.png'),
+                      // fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: null /* add child content here */,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                    image: DecorationImage(
+                      image: AssetImage('assets/facebook.png'),
+                      // fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: null /* add child content here */,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  alignment: Alignment.center,
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                    image: DecorationImage(
+                      image: AssetImage('assets/twitter.png'),
+                      // fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            ButtonText(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUp()));
+
+              },
+              textColor: DesignConfig.buttonColorBlue,
+              minWidth: double.infinity,
+              text: 'Dont have an account? Sign Up',
+              buttonColor: Colors.transparent,
+              height: DesignConfig.buttonHeight,
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              fontSize: DesignConfig.textFontSize,
+            ),
           ],
         ),
       ),

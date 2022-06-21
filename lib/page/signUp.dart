@@ -1,3 +1,5 @@
+import 'package:digi/page/homepage.dart';
+import 'package:digi/page/signIn.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
@@ -76,7 +78,11 @@ class SignUp extends StatelessWidget {
                 },
               ),
               ButtonText(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),);
+                },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
                 text: 'Sign Up',
@@ -86,7 +92,7 @@ class SignUp extends StatelessWidget {
                 fontSize: DesignConfig.textFontSize,
               ),
               const Divider(
-                color: DesignConfig.textFieldColor,
+                color: DesignConfig.textColor,
                 height: 2,
                 endIndent: 30,
                 indent: 30,
@@ -98,7 +104,7 @@ class SignUp extends StatelessWidget {
                     style: TextStyle(
                         color: DesignConfig.textColor,
                         fontSize: DesignConfig.textFontSize,
-                        fontWeight: FontWeight.w700)),
+                        fontWeight: FontWeight.w500)),
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,7 +122,6 @@ class SignUp extends StatelessWidget {
                         // fit: BoxFit.cover,
                       ),
                     ),
-                    child: null /* add child content here */,
                   ),
                   Container(
                     width: 50,
@@ -147,31 +152,20 @@ class SignUp extends StatelessWidget {
                   ),
                 ],
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Container(
-              //       margin: const EdgeInsets.only(
-              //           left: 30, right: 30, top: 12, bottom: 12),
-              //       child: const Text('I have an account?',
-              //           textAlign: TextAlign.center,
-              //           style: TextStyle(
-              //               color: DesignConfig.buttonColorBlue,
-              //               fontSize: DesignConfig.textFontSize,
-              //               fontWeight: FontWeight.w600)),
-              //     ),
-              //     ButtonText(
-              //       onTap: () {},
-              //       textColor: DesignConfig.buttonColorBlue,
-              //       minWidth: double.infinity,
-              //       text: 'Sign In',
-              //       buttonColor: Colors.transparent,
-              //       height: DesignConfig.buttonHeight,
-              //       margin: const EdgeInsets.symmetric(horizontal: 30),
-              //       fontSize: DesignConfig.textFontSize,
-              //     ),
-              //   ],
-              // )
+              ButtonText(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignIn()));
+                },
+                textColor: DesignConfig.buttonColorBlue,
+                minWidth: double.infinity,
+                text: 'I have an account? Sign In',
+                buttonColor: Colors.transparent,
+                height: DesignConfig.buttonHeight,
+                margin: const EdgeInsets.symmetric(horizontal: 30 ,vertical: 20),
+                fontSize: DesignConfig.textFontSize,
+              ),
             ],
           ),
         ),

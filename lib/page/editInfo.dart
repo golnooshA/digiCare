@@ -60,7 +60,7 @@ class _EditInformationState extends State<EditInformation> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
 
         ),

@@ -30,11 +30,11 @@ class _AvailableState extends State<Available> {
           elevation: 0,
           leading: GestureDetector(
             child: const Icon(
-              Icons.menu,
+              Icons.arrow_back_ios_sharp,
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
           actions: <Widget>[
             Padding(

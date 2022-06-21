@@ -40,7 +40,7 @@ class _BookingState extends State<Booking> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {},
+            onTap: () {Navigator.pop(context);},
           ),
           actions: <Widget>[
             Padding(

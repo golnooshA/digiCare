@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/desntist.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
@@ -46,7 +47,12 @@ class _CategoriesState extends State<Categories> {
           crossAxisCount: 3,
           children: <Widget>[
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 padding: const EdgeInsets.all(8),
                 alignment: Alignment.center,
@@ -60,7 +66,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 alignment: Alignment.center,
                 color: DesignConfig.darkBlue,
@@ -74,7 +85,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
 
                 alignment: Alignment.center,
@@ -89,7 +105,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 padding: const EdgeInsets.all(8),
 
@@ -104,7 +125,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 alignment: Alignment.center,
                 color: DesignConfig.darkBlue,
@@ -119,7 +145,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 alignment: Alignment.center,
                 color: DesignConfig.darkBlue,
@@ -133,7 +164,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 alignment: Alignment.center,
                 color: DesignConfig.darkBlue,
@@ -147,7 +183,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 alignment: Alignment.center,
                 color: DesignConfig.darkBlue,
@@ -161,7 +202,12 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             GestureDetector(
-              onTap:(){},
+              onTap:(){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Dentist()));
+
+              },
               child: Container(
                 alignment: Alignment.center,
                 color: DesignConfig.darkBlue,

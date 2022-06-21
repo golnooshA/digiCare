@@ -33,11 +33,11 @@ class TextFieldSimple  extends StatelessWidget {
     return Container(
       width: width,
       height: 50,
-      padding: EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       margin: margin,
       child: TextFormField(
-        style: TextStyle(
-            color: DesignConfig.textFieldColor,
+        style: const TextStyle(
+            color: DesignConfig.textColor,
             fontSize: DesignConfig.textFontSize),
         controller: controller,
         maxLines: maxLines,
@@ -47,13 +47,13 @@ class TextFieldSimple  extends StatelessWidget {
         focusNode: focusNode,
         textInputAction: keyboardButtonAction,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 8),
+          contentPadding: const EdgeInsets.symmetric(vertical: 8),
           hintMaxLines: maxLines,
           hintText: title,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
               color: DesignConfig.textFieldColor,
               fontSize: DesignConfig.textFontSize,
-              fontWeight: FontWeight.w600),
+              fontWeight: FontWeight.w500),
           alignLabelWithHint: true,
           filled: true,
           fillColor: Colors.transparent,
