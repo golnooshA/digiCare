@@ -90,7 +90,7 @@ class _AppointmentListState extends State<AppointmentList> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 50),
+                                margin: const EdgeInsets.only(left: 76),
                                 child: const Icon(Icons.remove_red_eye,
                                     size: 24,
                                     color: DesignConfig.buttonColorDarkBlue),
@@ -248,7 +248,7 @@ class _AppointmentListState extends State<AppointmentList> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 60),
+                                margin: const EdgeInsets.only(left: 85),
                                 child: const Icon(Icons.remove_red_eye,
                                     size: 24,
                                     color: DesignConfig.buttonColorDarkBlue),

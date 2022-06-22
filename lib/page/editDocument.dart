@@ -6,14 +6,14 @@ import '../core/design_config.dart';
 import 'package:image_picker/image_picker.dart';
 
 
-class AddDocument extends StatefulWidget {
-  const AddDocument({super.key});
+class EditDocument extends StatefulWidget {
+  const EditDocument({super.key});
 
   @override
-  _AddDocumentState createState() => _AddDocumentState();
+  _EditDocumentState createState() => _EditDocumentState();
 }
 
-class _AddDocumentState extends State<AddDocument> {
+class _EditDocumentState extends State<EditDocument> {
 
   late File imageFile;
   _getFromGallery() async {
@@ -45,7 +45,7 @@ class _AddDocumentState extends State<AddDocument> {
       home: Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: const Text('Add Document',
+            title: const Text('Edit Document',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: DesignConfig.textColor,
@@ -96,19 +96,19 @@ class _AddDocumentState extends State<AddDocument> {
                         dateDoneFocusNode.requestFocus();
                       },
                     ),
-                    TextFieldSimple(
-                      title: 'Date it done',
-                      controller: dateDoneController,
-                      width: double.infinity,
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 8),
-                      borderRadius: BorderRadius.circular(0),
-                      focusNode: dateDoneFocusNode,
-                      onFieldSubmitted: (s) {
-                        dateDoneFocusNode.unfocus();
-                        descriptionFocusNode.requestFocus();
-                      },
-                    ),
+                    // TextFieldSimple(
+                    //   title: 'Date it done',
+                    //   controller: dateDoneController,
+                    //   width: double.infinity,
+                    //   margin: const EdgeInsets.symmetric(
+                    //       horizontal: 30, vertical: 8),
+                    //   borderRadius: BorderRadius.circular(0),
+                    //   focusNode: dateDoneFocusNode,
+                    //   onFieldSubmitted: (s) {
+                    //     dateDoneFocusNode.unfocus();
+                    //     descriptionFocusNode.requestFocus();
+                    //   },
+                    // ),
                     TextFieldSimple(
                       title: 'Description',
                       controller: descriptionController,
@@ -159,7 +159,7 @@ class _AddDocumentState extends State<AddDocument> {
                   onTap: () {},
                   textColor: DesignConfig.buttonTextColor,
                   minWidth: double.infinity,
-                  text: 'Add New Documnet',
+                  text: 'Set Changes',
                   buttonColor: DesignConfig.buttonColorBlue,
                   height: DesignConfig.buttonHeight,
                   margin: const EdgeInsets.symmetric(
