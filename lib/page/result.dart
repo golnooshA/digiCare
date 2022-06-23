@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
-class Dentist extends StatefulWidget {
-  const Dentist({super.key});
+class Result extends StatefulWidget {
+  const Result({super.key});
 
   @override
-  _DentistState createState() => _DentistState();
+  _ResultState createState() => _ResultState();
 }
 
-class _DentistState extends State<Dentist> {
+class _ResultState extends State<Result> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,12 +20,12 @@ class _DentistState extends State<Dentist> {
         // drawer: Menu(),
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Dentist',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: DesignConfig.textColor,
-                  fontSize: DesignConfig.titleFontSize,
-                  fontWeight: FontWeight.w600)),
+          // title: const Text('Result',
+          //     textAlign: TextAlign.center,
+          //     style: TextStyle(
+          //         color: DesignConfig.textColor,
+          //         fontSize: DesignConfig.titleFontSize,
+          //         fontWeight: FontWeight.w600)),
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: GestureDetector(
@@ -116,7 +116,7 @@ class _DentistState extends State<Dentist> {
                         Container(
                           alignment: Alignment.centerLeft,
                           margin: const EdgeInsets.only(bottom: 8),
-                          child: const Text('Dentist',
+                          child: const Text('OB-GYN Nurse Practitioner',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: DesignConfig.textColor,
@@ -205,7 +205,7 @@ class _DentistState extends State<Dentist> {
                         Container(
                           alignment: Alignment.centerLeft,
                           margin: const EdgeInsets.only(bottom: 8),
-                          child: const Text('Dentist',
+                          child: const Text('Family Physician',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: DesignConfig.textColor,
@@ -383,7 +383,7 @@ class _DentistState extends State<Dentist> {
                         Container(
                           alignment: Alignment.centerLeft,
                           margin: const EdgeInsets.only(bottom: 8),
-                          child: const Text('Dentist',
+                          child: const Text('Pediatrician',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: DesignConfig.textColor,
@@ -472,7 +472,7 @@ class _DentistState extends State<Dentist> {
                         Container(
                           alignment: Alignment.centerLeft,
                           margin: const EdgeInsets.only(bottom: 8),
-                          child: const Text('Dentist',
+                          child: const Text('Eye',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: DesignConfig.textColor,

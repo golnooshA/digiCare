@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:digi/page/appointmentList.dart';
 import 'package:digi/page/getAppointment.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,9 +27,17 @@ class _BookingState extends State<Booking> {
   SeeDoctor? _seeDoctor = SeeDoctor.yes;
   VisitDoctor? _visitDoctor = VisitDoctor.inperson;
 
+  List<RadioModel> sampleData = <RadioModel>[];
 
-
-
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sampleData.add(new RadioModel(false, 'A', 'April 18'));
+    sampleData.add(new RadioModel(false, 'B', 'April 17'));
+    sampleData.add(new RadioModel(false, 'C', 'April 16'));
+    sampleData.add(new RadioModel(false, 'D', 'April 15'));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,20 +54,10 @@ class _BookingState extends State<Booking> {
               color: DesignConfig.textColor,
               size: DesignConfig.appBarIconSize,
             ),
-            onTap: () {Navigator.pop(context);},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
-          // actions: <Widget>[
-          //   Padding(
-          //       padding: const EdgeInsets.only(right: 20.0),
-          //       child: GestureDetector(
-          //         onTap: () {},
-          //         child: const Icon(
-          //           Icons.call,
-          //           color: DesignConfig.callColor,
-          //           size: DesignConfig.appBarIconSize,
-          //         ),
-          //       )),
-          // ],
         ),
         body: Column(
           children: [
@@ -72,7 +71,7 @@ class _BookingState extends State<Booking> {
                     children: [
                       Container(
                         margin:
-                        const EdgeInsets.only(left: 30, right: 30, top: 30),
+                            const EdgeInsets.only(left: 30, right: 30, top: 30),
                         alignment: Alignment.centerLeft,
                         child: const Text('Do you have health insurance?',
                             textAlign: TextAlign.center,
@@ -106,7 +105,8 @@ class _BookingState extends State<Booking> {
                           Expanded(
                             flex: 3,
                             child: ListTile(
-                              title: const Text('No' ,textAlign: TextAlign.left,
+                              title: const Text('No',
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: DesignConfig.textColor,
                                       fontSize: DesignConfig.textFontSize,
@@ -124,67 +124,61 @@ class _BookingState extends State<Booking> {
                           ),
                         ],
                       ),
-
-
                       GestureDetector(
                         child: Container(
                           width: double.infinity,
                           height: 50,
                           alignment: Alignment.centerLeft,
-                          margin:
-                          const EdgeInsets.only(left: 30, right: 30, bottom: 12),
-
+                          margin: const EdgeInsets.only(
+                              left: 30, right: 30, bottom: 12),
                           padding: const EdgeInsets.all(4),
-                          decoration:  const BoxDecoration(
+                          decoration: const BoxDecoration(
                             border: Border(
-                              bottom: BorderSide(
-                                color: DesignConfig.textFieldColor,
-                                width: 2,
-                              )
-                            ),
+                                bottom: BorderSide(
+                              color: DesignConfig.textFieldColor,
+                              width: 2,
+                            )),
                           ),
                           child: Text('What is your insurance?'),
                         ),
-
-                        onTap: (){
+                        onTap: () {
                           showCupertinoModalPopup(
                             context: context,
                             builder: (BuildContext context) =>
                                 CupertinoActionSheet(
-                                  actions: <Widget>[
-                                    CupertinoActionSheetAction(
-                                      child: Text('Cigna'),
-                                      onPressed: () {
-                                        Navigator.pop(context, 'Cigna');
-                                      },
-                                    ),
-                                    CupertinoActionSheetAction(
-                                      child: Text('Aetna'),
-                                      onPressed: () {
-                                        Navigator.pop(context, 'Aetna');
-                                      },
-                                    ),
-                                    CupertinoActionSheetAction(
-                                      child: Text('INA Assitalia'),
-                                      onPressed: () {
-                                        Navigator.pop(context, 'INA Assitalia');
-                                      },
-                                    ),
-                                    CupertinoActionSheetAction(
-                                      child: Text('Europ Assistance'),
-                                      onPressed: () {
-                                        Navigator.pop(context, 'Europ Assistance');
-                                      },
-                                    ),
-                                  ],
+                              actions: <Widget>[
+                                CupertinoActionSheetAction(
+                                  child: Text('Cigna'),
+                                  onPressed: () {
+                                    Navigator.pop(context, 'Cigna');
+                                  },
                                 ),
+                                CupertinoActionSheetAction(
+                                  child: Text('Aetna'),
+                                  onPressed: () {
+                                    Navigator.pop(context, 'Aetna');
+                                  },
+                                ),
+                                CupertinoActionSheetAction(
+                                  child: Text('INA Assitalia'),
+                                  onPressed: () {
+                                    Navigator.pop(context, 'INA Assitalia');
+                                  },
+                                ),
+                                CupertinoActionSheetAction(
+                                  child: Text('Europ Assistance'),
+                                  onPressed: () {
+                                    Navigator.pop(context, 'Europ Assistance');
+                                  },
+                                ),
+                              ],
+                            ),
                           );
                         },
                       ),
-
                       Container(
                         margin:
-                        const EdgeInsets.only(left: 30, right: 30, top: 12),
+                            const EdgeInsets.only(left: 30, right: 30, top: 12),
                         alignment: Alignment.centerLeft,
                         child: const Text(
                             'Has the patient seen this doctor before?',
@@ -199,7 +193,8 @@ class _BookingState extends State<Booking> {
                           Expanded(
                             flex: 2,
                             child: ListTile(
-                              title: const Text('Yes', textAlign: TextAlign.left,
+                              title: const Text('Yes',
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: DesignConfig.textColor,
                                       fontSize: DesignConfig.textFontSize,
@@ -216,9 +211,10 @@ class _BookingState extends State<Booking> {
                             ),
                           ),
                           Expanded(
-                            flex:3,
+                            flex: 3,
                             child: ListTile(
-                              title: const Text('No', textAlign: TextAlign.left,
+                              title: const Text('No',
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: DesignConfig.textColor,
                                       fontSize: DesignConfig.textFontSize,
@@ -238,7 +234,7 @@ class _BookingState extends State<Booking> {
                       ),
                       Container(
                         margin:
-                        const EdgeInsets.only(left: 30, right: 30, top: 12),
+                            const EdgeInsets.only(left: 30, right: 30, top: 12),
                         alignment: Alignment.centerLeft,
                         child: const Text('Choose the type of appointment',
                             textAlign: TextAlign.center,
@@ -252,13 +248,12 @@ class _BookingState extends State<Booking> {
                           Expanded(
                             flex: 2,
                             child: ListTile(
-                              title: const Text(
-                                  'In-person', textAlign: TextAlign.left,
+                              title: const Text('In-person',
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: DesignConfig.textColor,
                                       fontSize: DesignConfig.textFontSize,
-                                      fontWeight: FontWeight.w400)
-                              ),
+                                      fontWeight: FontWeight.w400)),
                               leading: Radio<VisitDoctor>(
                                 value: VisitDoctor.inperson,
                                 groupValue: _visitDoctor,
@@ -273,7 +268,8 @@ class _BookingState extends State<Booking> {
                           Expanded(
                             flex: 3,
                             child: ListTile(
-                              title: const Text('Chat', textAlign: TextAlign.left,
+                              title: const Text('Chat',
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: DesignConfig.textColor,
                                       fontSize: DesignConfig.textFontSize,
@@ -291,10 +287,9 @@ class _BookingState extends State<Booking> {
                           ),
                         ],
                       ),
-
                       Container(
                         margin:
-                        const EdgeInsets.only(left: 30, right: 30, top: 12),
+                            const EdgeInsets.only(left: 30, right: 30, top: 12),
                         alignment: Alignment.centerLeft,
                         child: const Text('Select an available time',
                             textAlign: TextAlign.center,
@@ -303,25 +298,258 @@ class _BookingState extends State<Booking> {
                                 fontSize: DesignConfig.textFontSize,
                                 fontWeight: FontWeight.w400)),
                       ),
-                      Column(
-                        children: [
 
-                          Container(
-                            color: Colors.lightBlue,
-                            margin:
-                            const EdgeInsets.only(left: 30, right: 30, top: 24),
-                            alignment: Alignment.center,
-                            child: const Text('Wed''\n''May 11',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: DesignConfig.textColor,
-                                    fontSize: DesignConfig.textFontSize,
-                                    fontWeight: FontWeight.w400)),
-                          ),
+                      SingleChildScrollView(
+                        reverse: true,
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                      left: 20, right: 20, top: 24,bottom: 12),
+                                  alignment: Alignment.center,
+                                  child: const Text('Wed' '\n' 'May 11',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: DesignConfig.textColor,
+                                          fontSize: DesignConfig.textFontSize,
+                                          fontWeight: FontWeight.w400)),
+                                ),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:15am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:30am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:45am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '09:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                              ],
+                            ),
 
-                        ],
+                            Column(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                      left: 20, right: 20, top: 24,bottom: 12),
+                                  alignment: Alignment.center,
+                                  child: const Text('Th' '\n' 'May 12',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: DesignConfig.textColor,
+                                          fontSize: DesignConfig.textFontSize,
+                                          fontWeight: FontWeight.w400)),
+                                ),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:15am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:30am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:45am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '09:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                              ],
+                            ),
+
+                            Column(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                      left: 20, right: 20, top: 24,bottom: 12),
+                                  alignment: Alignment.center,
+                                  child: const Text('Fr' '\n' 'May 13',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: DesignConfig.textColor,
+                                          fontSize: DesignConfig.textFontSize,
+                                          fontWeight: FontWeight.w400)),
+                                ),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:15am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:30am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:45am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '09:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                              ],
+                            ),
+
+                            Column(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                      left: 20, right: 20, top: 24,bottom: 12),
+                                  alignment: Alignment.center,
+                                  child: const Text('Sat' '\n' 'May 11',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: DesignConfig.textColor,
+                                          fontSize: DesignConfig.textFontSize,
+                                          fontWeight: FontWeight.w400)),
+                                ),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:15am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:30am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '08:45am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                                ButtonText(
+                                    onTap: (){},
+                                    textColor: DesignConfig.textColor,
+                                    minWidth: 40,
+                                    text: '09:00am',
+                                    buttonColor: DesignConfig.lightBlue,
+                                    padding: EdgeInsets.all(12),
+                                    fontSize: DesignConfig.subtitleFontSize,
+                                    height: 30),
+                              ],
+                            )
+                          ],
+                        ),
                       )
-
                     ],
                   ),
                 ],
@@ -330,9 +558,11 @@ class _BookingState extends State<Booking> {
             Expanded(
               flex: 1,
               child: ButtonText(
-                onTap: () {Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GetAppointment()));
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AppointmentList()));
                 },
                 textColor: DesignConfig.buttonTextColor,
                 minWidth: double.infinity,
@@ -340,7 +570,7 @@ class _BookingState extends State<Booking> {
                 buttonColor: DesignConfig.buttonColorBlue,
                 height: DesignConfig.buttonHeight,
                 margin:
-                const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 fontSize: DesignConfig.textFontSize,
               ),
             ),
@@ -349,4 +579,52 @@ class _BookingState extends State<Booking> {
       ),
     );
   }
+}
+
+class RadioItem extends StatelessWidget {
+  final RadioModel _item;
+
+  RadioItem(this._item);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      margin: new EdgeInsets.all(15.0),
+      child: new Row(
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          new Container(
+            height: 50.0,
+            width: 50.0,
+            child: new Center(
+              child: new Text(_item.buttonText,
+                  style: new TextStyle(
+                      color: _item.isSelected ? Colors.white : Colors.black,
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 18.0)),
+            ),
+            decoration: new BoxDecoration(
+              color: _item.isSelected ? Colors.blueAccent : Colors.transparent,
+              border: new Border.all(
+                  width: 1.0,
+                  color: _item.isSelected ? Colors.blueAccent : Colors.grey),
+              borderRadius: const BorderRadius.all(const Radius.circular(2.0)),
+            ),
+          ),
+          new Container(
+            margin: new EdgeInsets.only(left: 10.0),
+            child: new Text(_item.text),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class RadioModel {
+  bool isSelected;
+  final String buttonText;
+  final String text;
+
+  RadioModel(this.isSelected, this.buttonText, this.text);
 }

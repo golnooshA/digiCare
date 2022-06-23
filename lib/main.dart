@@ -25,7 +25,7 @@ import 'page/start.dart';
 
 void main() {
   runApp(MaterialApp(
-    home:Chats(),
+    home:Start(),
   ));
 }
 

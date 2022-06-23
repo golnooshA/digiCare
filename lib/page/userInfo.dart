@@ -18,7 +18,7 @@ class _UserInformationState extends State<UserInformation> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // drawer: Menu(),
+        drawer: Menu(),
         appBar: AppBar(
           centerTitle: true,
           title: const Text('UserInformation',

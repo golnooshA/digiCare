@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                   height: 220,
                   alignment: Alignment.center,
                   margin:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   decoration: const BoxDecoration(
                     // color: Colors.amber,
                     image: DecorationImage(
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                   margin:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                         height: DesignConfig.coverButtonHeight,
                         padding: const EdgeInsets.all(14),
                         margin:
-                            const EdgeInsets.only(left: 30, top: 8, bottom: 30),
+                        const EdgeInsets.only(left: 30, top: 8, bottom: 30),
                         fontSize: DesignConfig.coverButtonTextSize,
                         borderColor: DesignConfig.coverTextColor,
                       ),
@@ -140,8 +140,8 @@ class _HomePageState extends State<HomePage> {
                   child: GestureDetector(
                     onTap: (){
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => UserInformation()));
+                          context,
+                          MaterialPageRoute(builder: (context) => UserInformation()));
                     },
                     child: Container(
                         height: 120,

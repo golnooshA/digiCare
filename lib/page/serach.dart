@@ -1,4 +1,5 @@
 import 'package:digi/page/desntist.dart';
+import 'package:digi/page/result.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:digi/widget/form.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +97,7 @@ class _SearchState extends State<Search> {
                 onTap: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Dentist()));
+                      MaterialPageRoute(builder: (context) => Result()));
 
                 },
                 textColor: DesignConfig.buttonTextColor,

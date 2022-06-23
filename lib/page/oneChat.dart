@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import 'dart:async';
 // ignore_for_file: library_private_types_in_public_api
+import 'package:image_picker/image_picker.dart';
 
 class OneChat extends StatefulWidget {
   const OneChat({Key? key}) : super(key: key);
@@ -11,6 +14,21 @@ class OneChat extends StatefulWidget {
 }
 
 class _OneChatState extends State<OneChat> {
+
+  late File imageFile;
+  _getFromGallery() async {
+    PickedFile? pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+      maxWidth: 200,
+      maxHeight: 200,
+    );
+    if (pickedFile != null) {
+      setState(() {
+        imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
   List<ChatMessage> messages = [
     ChatMessage(messageContent: "Hello, Do", messageType: "receiver"),
     ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
@@ -72,7 +90,7 @@ class _OneChatState extends State<OneChat> {
                           padding: const EdgeInsets.all(16),
                           child: Text(
                             messages[index].messageContent,
-                            style: TextStyle(fontSize: 15),
+                            style: const TextStyle(fontSize: 15),
                           ),
                         ),
                       ),
@@ -83,7 +101,7 @@ class _OneChatState extends State<OneChat> {
                   alignment: Alignment.bottomLeft,
                   child: Container(
                     padding:
-                        const EdgeInsets.only(left: 10, bottom: 10, top: 10),
+                    const EdgeInsets.only(left: 10, bottom: 10, top: 10),
                     margin: const EdgeInsets.symmetric(horizontal: 12),
                     height: 80,
                     width: double.infinity,
@@ -91,7 +109,9 @@ class _OneChatState extends State<OneChat> {
                     child: Row(
                       children: <Widget>[
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            _getFromGallery();
+                          },
                           child: Container(
                             height: 30,
                             width: 30,
@@ -120,13 +140,13 @@ class _OneChatState extends State<OneChat> {
                         ),
                         FloatingActionButton(
                           onPressed: () {},
+                          backgroundColor: DesignConfig.buttonColorBlue,
+                          elevation: 0,
                           child: const Icon(
                             Icons.send,
                             color: Colors.white,
                             size: 18,
                           ),
-                          backgroundColor: DesignConfig.buttonColorBlue,
-                          elevation: 0,
                         ),
                       ],
                     ),
