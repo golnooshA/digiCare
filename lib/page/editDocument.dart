@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:digi/page/addDocumnet.dart';
 import 'package:digi/widget/button_text.dart';
 import 'package:digi/widget/form.dart';
 import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import 'package:image_picker/image_picker.dart';
+
+import 'medicalDocumnet.dart';
 
 
 class EditDocument extends StatefulWidget {
@@ -156,7 +159,9 @@ class _EditDocumentState extends State<EditDocument> {
               Expanded(
                 flex: 1,
                 child: ButtonText(
-                  onTap: () {},
+                  onTap: () {  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MedicalDocumnet()));},
                   textColor: DesignConfig.buttonTextColor,
                   minWidth: double.infinity,
                   text: 'Set Changes',

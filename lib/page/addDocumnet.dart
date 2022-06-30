@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../core/design_config.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'medicalDocumnet.dart';
+
 
 class AddDocument extends StatefulWidget {
   const AddDocument({super.key});
@@ -156,7 +158,9 @@ class _AddDocumentState extends State<AddDocument> {
               Expanded(
                 flex: 1,
                 child: ButtonText(
-                  onTap: () {},
+                  onTap: () {  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MedicalDocumnet()));},
                   textColor: DesignConfig.buttonTextColor,
                   minWidth: double.infinity,
                   text: 'Add New Documnet',

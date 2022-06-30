@@ -109,7 +109,7 @@ class _AvailableState extends State<Available> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 70),
+                                margin: const EdgeInsets.only(left: 102),
                                 child: const Icon(Icons.phone,
                                     size: 24, color: DesignConfig.callColor),
                               ),
@@ -200,7 +200,7 @@ class _AvailableState extends State<Available> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 80),
+                                margin: const EdgeInsets.only(left: 110),
                                 child: const Icon(Icons.phone,
                                     size: 24, color: DesignConfig.callColor),
                               ),
@@ -291,7 +291,7 @@ class _AvailableState extends State<Available> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 70),
+                                margin: const EdgeInsets.only(left: 100),
                                 child: const Icon(Icons.phone,
                                     size: 24, color: DesignConfig.callColor),
                               ),
@@ -382,7 +382,7 @@ class _AvailableState extends State<Available> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 60),
+                                margin: const EdgeInsets.only(left: 85),
                                 child: const Icon(Icons.phone,
                                     size: 24, color: DesignConfig.callColor),
                               ),
@@ -473,7 +473,7 @@ class _AvailableState extends State<Available> {
                               },
                               child: Container(
                                 alignment: Alignment.topCenter,
-                                margin: const EdgeInsets.only(left: 80),
+                                margin: const EdgeInsets.only(left: 100),
                                 child: const Icon(Icons.phone,
                                     size: 24, color: DesignConfig.callColor),
                               ),
