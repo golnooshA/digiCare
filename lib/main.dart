@@ -29,7 +29,7 @@ import 'page/start.dart';
 
 void main() {
   runApp(MaterialApp(
-    home:DoctorInformation(),
+    home: Start(),
   ));
 }
 
