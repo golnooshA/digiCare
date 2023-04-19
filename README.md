@@ -1,17 +1,5 @@
-# digicare
+# DigiCare
 
-A new Flutter project.
+People typically face a loss in their health as they age, including getting weaker, more prone to illness, having less vision, etc. They, therefore, require special medical treatment. Accordingly, DigiCare works to create a tool that could assist patients, the elderly, and their companions in managing and monitoring their health.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# digiCare" 
+This application has a section for medical history data, allowing users to keep track of their health information. Users can also schedule doctor appointments using the app, and pill reminders are included to help users remember to take their medications on schedule.
