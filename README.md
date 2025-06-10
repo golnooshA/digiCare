@@ -67,7 +67,7 @@ We tested two different interfaces for the ambulance feature placement:
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./assets/project.png" alt="Project" width="300"/>
+  <img src="./assets/project.png" alt="Project" width="600"/>
 </p>
 
 > _Screenshots reflect latest prototype after expert and user feedback._
